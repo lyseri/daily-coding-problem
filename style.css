@@ -1,0 +1,21 @@
+header, section, footer {
+    display: flex;
+    justify-content: center;
+}
+
+header {
+    padding-bottom: 10px;
+}
+
+table, th, td {
+    border: 1px solid;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td {
+    width: 200px;
+    padding: 4px 10px 4px 10px;
+}
