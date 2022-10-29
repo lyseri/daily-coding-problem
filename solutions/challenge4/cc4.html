@@ -5,14 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cc4</title>
-    <link rel="stylesheet" href="/solutions/solutions-style.css">
-    <script src="/solutions/challenge4/cc4-script.js"></script>
+    <link rel="stylesheet" href="/solutions/prism.css">
+    <script src="/solutions/prism.js"></script>
 </head>
 <body>
     <h1>Coding Challenge #4</h1>
     <img src="cc4-problem.png" alt="cc4 coding problem">
     <h2>Solution:</h2>
-    <img src="cc4-solution.png" alt="cc4 coding solution"><br><br>
+    <pre>
+        <code class="language-js line-numbers">
+        function lowestPositiveInt(array) {
+
+            //setup array for marking ints 0 through array length
+            let n = array.length;
+            let presentInts = new Array(n+1);
+            console.log(presentInts);
+
+            for (let i=0;i < n+1;i++) {
+                presentInts[i]=false;
+            }
+        
+            //if present mark it in new array
+            console.log(presentInts);
+            for (let i = 0; i < n; i++) {
+                if (array[i] > 0 && array[i] <= n)
+                {
+                    presentInts[array[i]] = true;
+                }
+            }
+        
+            console.log(presentInts);
+        
+            //check for lowest unmarked that's not zero
+            for (let i = 1; i <= n; i++) {
+                if (!presentInts[i])
+                {
+                    return i;
+                }
+            }
+        
+            //if completely sorted [1,2,3] etc, take n+1, total items plus 1
+            return n + 1;
+        }
+        </code>
+    </pre>
     <a href="/index.html">Back to main page</a>
 </body>
 </html>

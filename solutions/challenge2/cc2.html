@@ -5,15 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cc1</title>
-    <link rel="stylesheet" href="/solutions/solutions-style.css">
-    <script src="cc2-script.js"></script>
+    <link rel="stylesheet" href="/solutions/prism.css">
+    <script src="/solutions/prism.js"></script>
 </head>
 <body>
     <h1>Coding Challenge #2</h1>
     <img src="cc2-problem.png" alt="cc2 coding problem">
     <h2>Solution:</h2>
-    <code>The function productWithout() can be tested in the console.</code>
-    <img src="cc2-solution.png" alt="cc2 coding solution"><br><br>
+    <pre>
+        <code class="language-js line-numbers">
+        function productWithout(array) {
+
+            let current = 1;
+            let result = [];
+        
+            if (array.length == 1 || array.length == 0) {
+                return undefined;
+            }
+        
+            for (let index = 0; index < array.length; index++) {
+                for (let i = 0; i < array.length; i++) {
+                    if (array[i] != array[index]) {
+                        current *= array[i];
+                    }
+                }
+                result.push(current);
+                current = 1;
+            }
+            
+            return result;
+        }
+        </code>
+    </pre>
     <a href="/index.html">Back to main page</a>
 </body>
 </html>

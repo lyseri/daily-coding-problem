@@ -5,15 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cc1</title>
-    <link rel="stylesheet" href="/solutions/solutions-style.css">
-    <script src="cc1-script.js"></script>
+    <link rel="stylesheet" href="/solutions/prism.css">
+    <script src="/solutions/prism.js"></script>
 </head>
 <body>
     <h1>Coding Challenge #1</h1>
     <img src="cc1-problem.png" alt="cc1 coding problem">
     <h2>Solution:</h2>
-    <code>The function checkAdd() can be called in the console</code>
-    <img src="cc1-solution.png" alt="cc1 code solution"><br><br>
+    <pre>
+        <code class="language-js line-numbers">
+            function checkAdd(list, k) {
+                start = 0;
+            
+                while (start < list.length) {
+            
+                    for (let i = start+1; i <= list.length-1; i++) {
+                        if (list[start] + list[i] == k) {
+                            console.log(list[start] + " and " + list[i] + " add up to k.");
+                            return true;
+                        } else {  
+                            continue;
+                        }
+                    }
+                    start++;
+                }
+            
+                console.log("No two numbers in the array add up to k.");
+                return false;
+            
+            }
+        </code>
+    </pre>
     <a href="/index.html">Back to main page</a>
 </body>
 </html>
