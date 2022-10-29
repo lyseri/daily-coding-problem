@@ -1,6 +1,9 @@
 body {
+    margin: 0;
     background-color: rgb(234, 234, 234);
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-flow: column;
 }
 
 header, section, footer {
@@ -9,39 +12,41 @@ header, section, footer {
 }
 
 header {
-    padding-bottom: 10px;
+    background-color: rgb(58, 58, 58);
+    text-align: center;
 }
 
 section {
     display: flex;
     flex-flow: column;
     align-items: center;
-    gap: 20px;
 }
 
 h1 {
-    color: rgb(42, 42, 42);
+    color: rgb(255, 255, 255);
 }
 
 table {
+    margin-top: 30px;
     border-collapse: collapse;
     border-radius: 500px;
 }
 
+tr {
+    transition: all .2s ease-in-out; 
+    font-size: 1em;
+}
+
 tr:nth-child(odd) td {
-    background-color: rgb(227, 227, 227); 
+    background-color: rgb(247, 247, 247); 
 }
 
-tr:last-child td:nth-child(1) {
-    border-radius: 0 0 0 7px;    
-}
-
-tr:last-child td:last-child {
-    border-radius: 0 0 7px 0;    
-}
+/* tr.grow:hover {
+    transform: scale(1.04); 
+} */
 
 th {
-    background-color: rgb(91, 91, 91);
+    background-color: rgb(107, 107, 107);
     color: white;
     height: 50px;
 }
@@ -55,8 +60,9 @@ th:last-child {
 }
 
 td {
+    color: rgb(37, 37, 37);
     background-color: rgb(242, 242, 242);
-    width: 150px;
+    width: 140px;
     padding: 4px 10px 4px 10px;
     text-align: center;
 }
@@ -65,11 +71,6 @@ td span {
     padding: 7px 10px 7px 10px;
     border-radius: 5px;
     color: white;
-}
-
-a {
-    color: black;
-    text-decoration: none;
 }
 
 .js {
