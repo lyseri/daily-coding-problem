@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cc7</title>
+    <link rel="stylesheet" href="/solutions/prism.css">
+    <script src="/solutions/prism.js"></script>
+</head>
+<body>
+
+    <h1>Coding Challenge #7</h1>
+    <img src="cc7.png" alt="coding problem">
+    <h2>Solution:</h2>
+    <pre>
+        <code class="language-js line-numbers">
+        function helper(str, n) {
+            if (n == 0) {
+                return 1;
+            }
+        
+            start = str.length - n;
+            if (n[0] == '0') {
+                return 0;
+            }
+        
+            result = helper(str, n-1);
+            if (n >= 2 && str[start] <= 26) {
+                result += helper(str, n-2);
+            }
+            return result;
+        }
+        function numWays(str) {
+            return helper(str, str.length)
+        }
+        
+        console.log(numWays('1111'));
+        </code>
+    </pre>
+    <a href="/index.html">Back to main page</a>
+</body>
+</html>
